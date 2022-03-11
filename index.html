@@ -76,8 +76,64 @@
             <div id="reported">
                 <h1>Reported posts</h1>
             </div>
-        </main>
+       
+
+
+        <section id="bonus" class="w-75 ">
+            
+            <div>
+                
+                <img class="w-50 mt-5" src="https://i.ytimg.com/vi/VaBP6_pBOgM/maxresdefault.jpg" alt="">
+                <figcaption class="mb-5 ms-5">Fig.1 - How JS works</figcaption>
+
+
+                <h1>How does javascript work on browser: </h1>
+              
+               
+               <p> জাভাস্ক্রিপ্ট প্রোগাম ব্রাউজারে যখন রান করা হয় ব্রাউজার ইঞ্জিন  কোডটিকে রিসিভ করে  আউটপুট অউটপুট দেওয়া পর্যন্ত মোটামুটি চারটি ধাপে কাজ সম্পন্ন করে : 
+               <li>
+                Parser : এই ধাপে সোর্স কোডটিতে syntactic কোন ভুল আছে কিনা  চেক করা হয়। ভুল থাকলে এখানেই এক্সিকিউশন বন্ধ করে দেয়। 
+              </li>
+               <li>
+                AST (Abstract Syntax Tree) : যদি Parser এ কোন ভুল না ধরা পরে তাহলে AST নামের একটি ডাটা স্ট্রাকচার তৈরি হয়।
+
+               </li> 
+               
+               <li>
+                 Conversion to Machine Code : AST তৈরি করার পর ব্রাউজার ইঞ্জিন সোর্স কোডকে JIT ( Just in Time ) কম্পাইলারের মাধ্যেম  কম্পাইল করে   এবং মেশিন কোডে রূপান্তরিত করে।
+
+               </li>
+                
+               <li>
+                 Machine Code : সবশেষে ইঞ্জিন এই মেশিন কোডকে রান করে  ফাইনাল অউটপুট দেয়। 
+
+               </li>                
+                </p>
+               
+            </div  >
+
+            
+
+            <div >
+
+                <img class="mt-5" style="width: 600px;" src="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop/the_javascript_runtime_environment_example.svg" alt="">
+                <figcaption class="mb-5 ms-5">Fig.2 - Event Loop</figcaption>
+
+                <h1> Event Lopp:</h1>
+                <p>
+    
+                  
+                  জাভাস্ক্রিপ্ট ব্রাউজারে রানটাইমে কোড গুলো লুপ আকারে এক্সিকিউট হয়। একে Even Loop বলা হয়। <br>
+                  সংক্ষেপে বলা যায় : জাভাস্ক্রিপ্ট কোডের কিছু অংশ Synchronous ভাবে আর কিছু অংশ Asynchronous ভাবে রান হয়। Synchronous অংশ গুলো উপর থেকে Stack আকারে রান হয় এবং এর পরে Asynchronous গুলো Queue আকারে রান হয়।আবার asynchronous গুলোকে পর্যায়ক্রমে নির্দিষ্ট সময় পরে এক বা একাধিকবারও রান করানো যেতে পারে। 
+                  অবজেক্ট গুলা Heap নামে মেমোরি অ্যালোকেশন করে  (Unstructured) । অপ্রয়োজনীয় অংশ গুলো garbage collection এ চলে যায়।
+                 এই পুরো বিষয়কেই জাভাস্ক্রিপ্টের Event Loop বলা হয় । 
+                 
+                </p>
+            </div>
+        </section>
+    </main>
         <footer></footer>
+    
 
         <!-- add javascript  file  -->
         <script src="./js/app.js"></script>

@@ -16,8 +16,31 @@ const isLiked = (id) => {
 };
 
 const addToLiked = (id) => {
-    likedPostsId.push(id); 
-    showPosts(posts);
+
+
+    
+  if (likedPostsId.length!==0){
+    // const protect = likedPostsId.filter(post => likedPostsId.includes(post.id))
+
+    likedPostsId.splice(id-1, id+1)
+  }
+    
+  else{
+  likedPostsId.push(id)
+  }
+
+    if (reportedPostsId.length==0){
+      showPosts(posts);
+    }
+
+    else{
+      const protectReporteds = posts.filter(post => !reportedPostsId.includes(post.id))
+
+      showPosts(protectReporteds)
+    }
+    
+  
+    
 };
 
 const reportPost = (id) => {
@@ -35,16 +58,21 @@ const switchTab = (id) => {
         document.getElementById( "posts" ).style.display = "grid";
         document.getElementById( "liked" ).style.display = "none";
         document.getElementById( "reported" ).style.display = "none";
+        document.getElementById( "bonus" ).style.display = "block";
+
     } else if (id === "liked") {
         document.getElementById( "liked" ).style.display = "block";
         document.getElementById( "posts" ).style.display = "none";
         document.getElementById( "reported" ).style.display = "none";
+        document.getElementById( "bonus" ).style.display = "none";
 
         displayLikedPosts();
     } else {
         document.getElementById( "reported" ).style.display = "block";
         document.getElementById( "posts" ).style.display = "none";
         document.getElementById( "liked" ).style.display = "none";
+        document.getElementById( "bonus" ).style.display = "none";
+
 
         displayReportedPosts();
     }
@@ -86,7 +114,7 @@ const createPost = (post) => {
               <div class="post__footer">
                 <div class="post__buttons">
                   <button class="post__button" onclick="addToLiked(${post.id})">
-                  <i class="fa-solid fa-heart ${isLiked(post.id) && "text-danger"}"></i>
+                  <i id='like' class="fa-solid fa-heart ${isLiked(post.id) && "text-danger"}"></i>
                     
                   </button>
                   <button class="post__button">
