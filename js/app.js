@@ -18,16 +18,7 @@ const isLiked = (id) => {
 const addToLiked = (id) => {
 
 
-    
-  if (likedPostsId.length!==0){
-    // const protect = likedPostsId.filter(post => likedPostsId.includes(post.id))
-
-    likedPostsId.splice(id-1, id+1)
-  }
-    
-  else{
   likedPostsId.push(id)
-  }
 
     if (reportedPostsId.length==0){
       showPosts(posts);
